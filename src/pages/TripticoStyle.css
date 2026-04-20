@@ -1,0 +1,471 @@
+/* TripticoStyle.css */
+/* Contenedor principal */
+.triptico-container {
+  min-height: 100vh;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .triptico-container {
+    padding: 2rem;
+  }
+}
+
+.triptico-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.triptico-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .triptico-header {
+    flex-direction: row;
+  }
+}
+
+.triptico-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.triptico-subtitle {
+  color: #94a3b8;
+}
+
+/* Navigation Buttons */
+.triptico-nav {
+  display: flex;
+  background-color: #0f172a;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #1e293b;
+}
+
+.nav-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.nav-btn-active {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn-inactive {
+  color: #94a3b8;
+}
+
+.nav-btn-inactive:hover {
+  color: white;
+}
+
+/* Brochure Container */
+.brochure-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid #1e293b;
+  background-color: #000814;
+  min-height: 600px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.brochure-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.brochure-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 600px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .brochure-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Panel común */
+.panel {
+  padding: 2rem;
+}
+
+.panel-border {
+  border-right: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+/* Panel 1 - Contacto */
+.panel-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(15, 23, 42, 0.2);
+}
+
+.panel-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #22d3ee;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  padding: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  color: #60a5fa;
+}
+
+.commitment-box {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.commitment-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #60a5fa;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.commitment-text {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #94a3b8;
+}
+
+/* Panel 2 - Tecnología */
+.panel-tech {
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), transparent);
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tech-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.tech-icon {
+  flex-shrink: 0;
+  color: #60a5fa;
+}
+
+.tech-title {
+  font-weight: bold;
+}
+
+.tech-description {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* Panel 3 - Portada */
+.panel-cover {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, rgba(29, 78, 216, 0.2), #020617);
+}
+
+.logo-wrapper {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.logo-glow {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 217, 255, 0.2);
+  filter: blur(48px);
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+
+.logo-wrapper:hover .logo-glow {
+  background-color: rgba(0, 217, 255, 0.3);
+}
+
+.logo-img {
+  width: 12rem;
+  height: 12rem;
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 0 12px rgb(0, 217, 255));
+}
+
+.cover-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.cover-location {
+  color: #60a5fa;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.cover-divider {
+  height: 0.25rem;
+  width: 5rem;
+  background: linear-gradient(to right, transparent, #ef4444, transparent);
+  margin-bottom: 1.5rem;
+}
+
+.cover-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #e2e8f0;
+}
+
+.cover-highlight {
+  color: #22d3ee;
+  font-style: italic;
+}
+
+/* Interior Panels */
+.interior-panel {
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+.interior-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.interior-highlight {
+  color: #22d3ee;
+}
+
+.interior-text {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box-red {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  margin-bottom: 1rem;
+}
+
+.stat-box-green {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.stat-title-red {
+  color: #f87171;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-title-green {
+  color: #4ade80;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-description {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* Night Panel */
+.night-panel {
+  padding: 2rem;
+  background-color: rgba(29, 78, 216, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.night-icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.night-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.night-highlight {
+  color: #60a5fa;
+}
+
+.night-text {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.stat-card {
+  background-color: rgba(15, 23, 42, 0.6);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
+  text-align: center;
+}
+
+.stat-number {
+  color: #22d3ee;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: bold;
+}
+
+/* Hardware/Software Panel */
+.solution-panel {
+  padding: 2rem;
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+.solution-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.solution-card {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background-color: rgba(30, 41, 59, 0.4);
+  transition: all 0.2s;
+}
+
+.solution-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.solution-card-title {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #60a5fa;
+}
+
+.solution-card-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Footer */
+.triptico-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.footer-quote {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
