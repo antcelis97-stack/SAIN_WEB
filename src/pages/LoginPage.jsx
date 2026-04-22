@@ -30,7 +30,7 @@ const LoginPage = ({onLogin}) => {
             <button className="w-full flex items-center justify-between px-6 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-2xl transition-all group">
               <div className="flex items-center gap-4">
                 <UserPlus className="text-cyan-400 group-hover:scale-110 transition-transform" size={22} />
-                <span className="font-bold text-slate-200">Registrar Granja</span>
+                <span className="font-bold text-slate-200">Registrarse</span>
               </div>
               <div className="text-xs text-slate-500 uppercase tracking-widest">Nuevo</div>
             </button>

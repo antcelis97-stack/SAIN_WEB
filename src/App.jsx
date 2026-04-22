@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import TripticoPage from './pages/TripticoPage';
 import LoginPage from './pages/LoginPage';
-import ServicesPage from './pages/ServicesPage'; // La nueva página de la empresa
+import ServicesPage from './pages/ServicesPage';
+import PrototypePage from './pages/PrototypePage';
 import Navbar from './components/Navbar';
+import ShopServices from './pages/ShopServices';
+import FeedbackPage from './pages/FeedbackPage';
 
 function App() {
   // Mantenemos tu lógica de localStorage intacta
@@ -28,27 +31,21 @@ function App() {
         {/* El Navbar ahora sí recibe la función logout correctamente */}
         {isAuthenticated && <Navbar onLogout={logout} />}
         <Routes>
-          {/* LOGIN: Si ya está logueado, lo manda al Home (/) */}
-          <Route 
-            path="/login" 
-            element={!isAuthenticated ? <LoginPage onLogin={login} /> : <Navigate to="/" />} 
-          />
-          {/* HOME: Tu entrada principal (la de la imagen que me mostraste) */}
-          <Route 
-            path="/" 
-            element={isAuthenticated ? <Home /> : <Navigate to="/login" />} 
-          />
-          {/* TRÍPTICO: La divulgación digital */}
-          <Route 
-            path="/triptico" 
-            element={isAuthenticated ? <TripticoPage /> : <Navigate to="/login" />} 
-          />
-          {/* SERVICIOS: La nueva sección de prototipos, noticias y feedback */}
-          <Route 
-            path="/services" 
-            element={isAuthenticated ? <ServicesPage /> : <Navigate to="/login" />} 
-          />
-          {/* REDIRECCIÓN: Si el usuario escribe cualquier otra cosa, al Home */}
+          <Route path="/login" element={!isAuthenticated ? <LoginPage onLogin={login} /> : <Navigate to="/" />} />
+          <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/triptico" element={isAuthenticated ? <TripticoPage /> : <Navigate to="/login" />} />
+          
+          {/* Rutas separadas para cada sección del menú */}
+          <Route path="/news" element={isAuthenticated ? <ServicesPage /> : <Navigate to="/login" />} />
+          <Route path="/prototypes" element={<PrototypePage />} />
+          <Route path="/shop" element={isAuthenticated ? <ShopServices /> : <Navigate to="/login" />} />
+
+          
+          {/* Redirección de rutas antiguas por compatibilidad */}
+          <Route path="/services" element={<Navigate to="/news" />} />
+          <Route path="/servicios" element={<Navigate to="/news" />} />
+          <Route path="/feedback" element={isAuthenticated ? <FeedbackPage /> : <Navigate to="/login" />} />
+          {/*Redirección por si se escribe mal la dirección */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

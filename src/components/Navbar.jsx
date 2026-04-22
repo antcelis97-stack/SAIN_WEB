@@ -25,7 +25,7 @@ const Navbar = ({ onLogout }) => {
             
             {/* Botón Principal: Ir al sitio web */}
             <Link 
-              to="/services" 
+              to="/services"
               className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white px-5 py-2 rounded-xl transition-all shadow-lg shadow-blue-900/20 text-sm font-bold active:scale-95"
             >
               <Globe size={18} /> 
