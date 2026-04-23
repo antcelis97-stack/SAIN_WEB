@@ -20,7 +20,7 @@ return (
             {/* Espacio para la imagen */}
             <div className="w-full h-48 bg-slate-800 rounded-2xl mb-4 flex items-center justify-center overflow-hidden border border-slate-700">
               <img 
-                src="src/assets/Gemini_Generated_Image_5ocae45ocae45oca.png" 
+                src="/assets/prototipo1.png" 
                 alt="Prototipo 1"
                 className="w-full h-full object-cover"
               />
@@ -44,7 +44,7 @@ return (
             {/* Espacio para la imagen */}
             <div className="w-full h-48 bg-slate-800 rounded-2xl mb-4 flex items-center justify-center overflow-hidden border border-slate-700">
               <img 
-                src="src/assets/Captura de pantalla 2026-04-22 090535.png" 
+                src="/assets/prototipo2.png" 
                 alt="Prototipo 2"
                 className="w-full h-full object-cover"
               />

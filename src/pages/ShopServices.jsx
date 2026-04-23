@@ -10,7 +10,7 @@ const ShopServices = () => {
       name: 'Modelo SAIN-01',
       tag: 'Económico',
       price: '$ 7,500 MXN',
-      image: 'src/assets/Gemini_Generated_Image_3wj3zb3wj3zb3wj3.png',
+      image: '/assets/sain01.png',
       description: 'Sistema básico de monitoreo y alimentación automatizada para granjas pequeñas.',
       features: [
         'Dosificador de alimento programable',
